@@ -13,6 +13,9 @@ body {
   top: 0px;
   background: #0f1738;
 }
+.navbar{
+  display: none;
+}
 .dashboard {
   position: relative;
   top: 2.36%;
@@ -589,112 +592,177 @@ body {
 
 /* Mobile styles */
 @media only screen and (max-width: 768px) {
-  .main {
-      display: flex;
-      flex-direction: column;
-  }
+  .main{
+    position: absolute;
+        width: 390px;
+        height: 88px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
 
-  /* Navbar styles */
-  .sidebar {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #0f1738; /* or the color you prefer */
   }
+  .sidebar{
+    display: none;
+  }
+  .navbar{
+    position: absolute;
+    width: 390px;
+height: 88px;
+gap: 0px;
+opacity: 0px;
+background: #0F1738;
+display: inline;
+align-items: center;
 
-  .dashboard {
-      display: flex;
-      align-items: center;
-      width: 100%;
   }
+  .grain-icon{
+    margin-left: -22px;
+    margin-top: 25px;
+  }
+  .nav-dashboard{
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-dashboard p{
+    align-items: center;
+    color: white;
+    padding-left: 50px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 30px;
+  }
+#hamburger-icon{
+  padding-left: 180px;
+  margin-top: 10px;
+}
+.nav-contents {
+  display: none; /* Initially hidden */
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+.middle-content{
+  position: absolute;
+  width: 390px;
+  height: 925px;
+  top: 88px;
+  left: 0px;
+  opacity: 0px;
+  border-bottom: 1px solid #c9cee9;
+}
+.welcome-msg{
+  width: 318px;
+height: 54px;
+top: 120px;
+left: 16px;
+gap: 0px;
+opacity: 0px;
+}
+.document-section{
+  position: absolute;
+  left: 20px;
+}
+.application-section{
+  position: absolute;
+  left: 20px;
+  top: 357px;
+}
+.middle-bottom{
+  left: 20px;
+  position: relative;
+  top: 450px;
+  padding-bottom: 50px;
+}
+.final-section{
+  position: relative;
+  width: 358px;
+  height: 889px;
+top: 980px;
+left: 16px;
+gap: 255px;
+opacity: 0px;
+}
+.task-table {
+  table-layout: auto;
+  width: 358px;
+  height: auto;
+  top: 129px;
+  left: 756px;
+  gap: 0px;
+  opacity: 1; /* Assuming you want the table to be visible */
+  border-radius: 10px; /* Rounded corners for the entire table */
+  overflow: hidden; /* Ensures rounded corners apply to the table contents */
+}
+.task-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  .dashboard img.grain-icon {
-      margin-right: 10px;
-  }
+.task-table th,
+.task-table td {
+  padding: 8px;
+  text-align: left;
+}
 
-  .dashboard p {
-      margin: 0;
-      font-size: 20px;
-      font-weight: bold;
-  }
+.task-table th {
+  display: none;
+}
 
-  .menu {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-left: auto;
-  }
+.task-table td {
+  display: block;
+}
 
-  .menu img {
-      cursor: pointer;
-  }
+.task-table tr {
+  display: block;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
 
-  /* Sidebar menu toggle */
-  .sidebar_menu {
-      display: none;
-      flex-direction: column;
-      background-color: #f8f9fc; /* or the color you prefer */
-      width: 100%;
-      padding: 20px;
-  }
+.task-table tr td:first-child {
+  font-weight: bold;
+}
 
-  .sidebar_menu.active {
-      display: flex;
-  }
+.task-table tr td:not(:first-child) {
+  padding-left: 20px;
+  padding-top: 4px;
+}
 
-  /* Middle content styling */
-  .middle-content {
-      padding: 20px;
-  }
+.task-table td button {
+  padding: 4px, 12px, 4px, 12px;
+  background-color: #f1f1f5; /* Gray background color for buttons */
+  font-size: 13px;
+  padding: 4px 12px 4px 12px;
+  gap: 10px;
+  border-radius: 24px;
+  border: 1px;
+}
 
-  .welcome-msg,
-  .document-section,
-  .application-section,
-  .middle-bottom,
-  .task-section {
-      margin-bottom: 20px;
-  }
 
-  /* Adjusting document, application, and other sections */
-  .document-content,
-  .application-list,
-  .bottom-icons,
-  .task-table {
-      width: 100%;
-  }
+.task-table tr td:nth-child(2),
+.task-table tr td:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 20px);
+  padding: 8px 10px; /* Adjust padding */
+}
 
-  .bottom-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
+.task-table tr td:nth-child(4) {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+}
 
-  .icon {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .icon img {
-      margin-bottom: 5px;
-  }
-
-  .icon-line {
-      display: none;
-  }
-
-  .task-table table {
-      width: 100%;
-  }
-
-  .task-table th,
-  .task-table td {
-      font-size: 12px;
-      padding: 10px;
-  }
 }
 
 /* Hamburger toggle functionality */
