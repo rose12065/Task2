@@ -10,3 +10,12 @@ hamburgerIcon.addEventListener('click', () => {
     navContents.style.display = 'none';
   }
 });
+
+
+
+
+function toggleAccordion(element) {
+  const paymentBox = element.closest('.payment-box');
+  paymentBox.classList.toggle('active');
+}
+
